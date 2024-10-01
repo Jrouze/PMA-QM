@@ -1,7 +1,7 @@
 # PMA-QM
 
 ## Description
-This repository aims to provide all the necessary resources and instructions to reproduce the results presented in [LINK TO PAPER2 TO ADD]. It contains the following files and folders:
+This repository aims to provide all the necessary resources and instructions to reproduce the results presented in [LINK TO PAPER TO ADD]. It contains the following files and folders:
 
 - PMA-QM.py provides an implementation of how to use the parallel memetic algorithm (PMA) to map a quantum circuit to some hardware. Running it writes a "bench_..._.txt" file that can be used to study the performance of the algorithms.
 - pygad_mpi.py provides our modified version of PYGAD (original codes are available at https://github.com/ahmedfgad/GeneticAlgorithmPython) that we modified for our own usage, namely to leverage mpi4py parallelism.
@@ -17,7 +17,7 @@ Any other libraries should work fine with their latest versions.
 - PMA-QM.py can be executed using `mpirun -n N python ./PMA-QM.py -c CIRCUIT SIZE --pga PGA -s STOP -k CHUNKSIZE;`. The arguments are as follows:
   - CIRCUIT is the type of circuit to be used (e.g., ghzall, ghz, dj, qft).
   - SIZE is a strictly positive integer, the number of qubits of the circuit.
-  - PGA is either 1, 2, or 3 and selects which PGA parameters are wanted (see [LINK TO PAPER1 TO ADD]). To reproduce the results presented in [LINK TO PAPER2 TO ADD], PGA=1 should be used.
+  - PGA is either 1, 2, or 3 and selects which PGA parameters are wanted (see (https://ola2024.sciencesconf.org/data/pages/Proceedings_OLA_2025.pdf#page=229)). To reproduce the results presented in [LINK TO PAPER TO ADD], PGA=1 should be used.
   - STOP is an integer indicating the stopping criterion of the PGA. Values <= 0 will result in stopping the PGA after a number of generations (30 or 35 here). Values > 0 mean that the PGA may stop earlier if the best solution didn't improve for STOP consecutive generations.
   - CHUNKSIZE is a strictly positive interger indicating the number of jobs submitted at once to the worker processes when they request a task. It choose the granularity of the parallel parts of the code.
     
