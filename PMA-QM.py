@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 29 13:32:47 2024
 
-@author: Jérôme
-
-This code run the explovoisin using MPI and the can use all variation (on_start, on_stop, on_mutation).
 """
 
 
