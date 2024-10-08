@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr  8 14:29:17 2024
 
-@author: Jérôme
 """
 
 import numpy
