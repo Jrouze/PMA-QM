@@ -139,29 +139,6 @@ qc,qr=circuit_selector(name, nb_qubit)
 ##------------------------------------------------------- 
 chunk_size = args.chunk_size
 
-def explo_vois(indiv,backend,indiv_depth=None):
-    indiv=list(indiv)
-    if indiv_depth is None:
-        best_d=fitness4(indiv)
-    else:
-        best_d=indiv_depth
-    best_indiv=indiv
-    S=set(range(backend.num_qubits))-set(indiv)
-    N=len(indiv)
-    for i in range(N):
-        a=indiv[i]
-        neighbors=set()
-        for s in S:
-            if backend.coupling_map.distance(a, s)==1:
-                neighbors.add(s)
-        for s in neighbors:
-            indiv_tempo=indiv[:i]+[s]+indiv[i+1:]
-            d=fitness4(indiv_tempo)
-            if best_d<d:
-                best_d=d
-                best_indiv=indiv_tempo
-    return best_d,best_indiv
-
 ##-------------------------------------------------------
 ##      Neighbourhood of one individual
 ##-------------------------------------------------------  
